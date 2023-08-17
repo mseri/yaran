@@ -13,5 +13,5 @@ type statement = Statement of sexp list [@@deriving show]
 
 (* Return a single atom if the list has an only one element *)
 let flatten = function
-  | ListSexp s when List.length s == 1 -> List.hd s
+  | ListSexp [ s ] -> s
   | s -> s
